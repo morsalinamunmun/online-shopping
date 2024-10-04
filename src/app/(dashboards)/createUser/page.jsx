@@ -2,8 +2,8 @@ import React from 'react';
 
 const page = () => {
     return (
-        <div className='text-center font-medium text-2xl'>
-            wishlist
+        <div className='mt-20 text-2xl font-medium text-center'>
+            Create User
         </div>
     );
 };

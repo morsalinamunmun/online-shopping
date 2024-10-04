@@ -1,5 +1,6 @@
 
 import getSingleProduct from '@/lib/getSingleProduct';
+// import { useGetProductByIdQuery } from '@/redux/features/productsApi';
 import { Button} from 'antd';
 import Image from 'next/image';
 import React from 'react';
@@ -7,6 +8,7 @@ import React from 'react';
 const page = async ({ params }) => {
     const { id } = params;
     const product = await getSingleProduct(id);
+    // const {data: product} = useGetProductByIdQuery(id);
     console.log(product, 'product')
     return (
         // <div>

@@ -1,3 +1,5 @@
+import getProducts from "@/lib/getProducts";
+
 // import React, { useState } from 'react';
 const initialProducts = [
     { id: 1, name: 'Wireless Earbuds', price: 59.99, quantity: 1, image: '/placeholder.svg?height=80&width=80' },
@@ -8,17 +10,20 @@ const initialProducts = [
 const page = () => {
     // const [products, setProducts] = useState(initialProducts)
 
-  const updateQuantity = (id, newQuantity) => {
-    setProducts(products.map(product => 
-      product.id === id ? { ...product, quantity: Math.max(0, newQuantity) } : product
-    ))
-  }
 
-  const removeProduct = (id) => {
-    setProducts(products.filter(product => product.id !== id))
-  }
+  // const products = await getProducts();
 
-  const total = products.reduce((sum, product) => sum + product.price * product.quantity, 0)
+  // const updateQuantity = (id, newQuantity) => {
+  //   setProducts(products.map(product => 
+  //     product.id === id ? { ...product, quantity: Math.max(0, newQuantity) } : product
+  //   ))
+  // }
+
+  // const removeProduct = (id) => {
+  //   setProducts(products.filter(product => product.id !== id))
+  // }
+
+  // const total = products.reduce((sum, product) => sum + product.price * product.quantity, 0)
     return (
         <div className="container mx-auto p-4 max-w-3xl">
       {/* <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
@@ -97,6 +102,7 @@ const page = () => {
           </div>
         </div>
       </div> */}
+      <h2 className="text-center text-2xl font-medium ">Carts</h2>
     </div>
     );
 };

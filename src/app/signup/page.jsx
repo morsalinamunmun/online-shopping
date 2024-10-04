@@ -3,7 +3,7 @@
 import { Input, Button } from 'antd'; // Ant Design Input and Button
 import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing React Icons
 
-const LoginPage = () => {
+const Signup = () => {
 //   const [username, setUsername] = useState('');
 //   const [password, setPassword] = useState('');
 //   const [showPassword, setShowPassword] = useState(false);
@@ -22,9 +22,20 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center mb-6">Login to Your Account</h1>
+        <h1 className="text-2xl font-bold text-center mb-6">Create to Your Account</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Username Input */}
+          <div className="relative">
+            <Input
+              type="text"
+              placeholder="Username"
+            //   value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              prefix={<FaUser />} // React Icon for User
+              size="large"
+              required
+            />
+          </div>
           <div className="relative">
             <Input
               type="text"
@@ -37,11 +48,23 @@ const LoginPage = () => {
             />
           </div>
 
+          <div className="relative">
+            <Input
+              type="email"
+              placeholder="Email"
+            //   value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              prefix={<FaUser />} // React Icon for User
+              size="large"
+              required
+            />
+          </div>
+
           {/* Password Input */}
           <div className="relative">
             <Input
             //   type={showPassword ? "text" : "password"}
-              placeholder="Numeric Password"
+              placeholder="Password"
             //   value={password}
               onChange={handlePasswordChange}
               prefix={<FaLock />} // React Icon for Lock
@@ -64,19 +87,19 @@ const LoginPage = () => {
             className="w-full bg-blue-600 hover:bg-blue-700"
             size="large"
           >
-            Log In
+            sign Up
           </Button>
         </form>
 
         {/* Forgot Password */}
         <div className="mt-4 text-center">
-          <a href="#" className="text-sm text-blue-600 hover:underline">Forgot password?</a>
+          {/* <a href="#" className="text-sm text-blue-600 hover:underline">Forgot password?</a> */}
         </div>
 
         {/* Sign Up Option */}
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
-            Don't have an account? <a href="signup" className="text-blue-600 hover:underline">Sign up</a>
+            Already have an account? <a href="/login" className="text-blue-600 hover:underline">Log In</a>
           </p>
         </div>
       </div>
@@ -84,4 +107,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Signup;
